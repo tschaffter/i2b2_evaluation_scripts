@@ -5,6 +5,8 @@ import numpy
 from collections import defaultdict
 from tags import PHITag, DocumentTag
 
+import difflib
+
 
 class Token(object):
     """ Class designed to encapsulate the idea of a token.  This includes
