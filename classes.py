@@ -5,8 +5,6 @@ import numpy
 from collections import defaultdict
 from tags import PHITag, DocumentTag
 
-import difflib
-
 
 class Token(object):
     """ Class designed to encapsulate the idea of a token.  This includes
@@ -243,6 +241,8 @@ class StandoffAnnotation(object):
                                                    .basename(file_name))[0]
         else:
             self.patient_id = None
+
+        print("Patient ID is", self.patient_id)
 
         if file_name is not None:
             with open(file_name, 'r') as handle:
