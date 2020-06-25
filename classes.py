@@ -123,13 +123,8 @@ class TokenSequence(object):
 
         tokenizer = self.tokenizer if tokenizer is None else tokenizer
 
-        if hasattr(text, "__iter__"):
-            self.text = ''.join(t.to_string() for t in text)
-            self.tokens = text
-
-        else:
-            self.text = text
-            self.tokens = tokenizer(self.text, start=start)
+        self.text = text
+        self.tokens = tokenizer(self.text, start=start)
 
         # If start is 0 we assume we're parsing a whole document
         # and not a sub-string of tokens.
@@ -244,7 +239,7 @@ class StandoffAnnotation(object):
 
         if file_name is not None:
             with open(file_name, 'r') as handle:
-                self.parse_text_and_tags(handle.read().decode('utf8'))
+                self.parse_text_and_tags(handle.read())
                 self.file_name = file_name
 
     @property
@@ -530,7 +525,8 @@ class Evaluate(object):
         assert len(set([a.sys_id for a in s_sas.values()])) == 1, \
             "More than one annotator ID in this set of Annotations!"
 
-        self.sys_id = s_sas.values()[0].sys_id
+        # was self.sys_id = s_sas.values()[0].sys_id
+        self.sys_id = next(iter(s_sas.values())).sys_id
 
         for doc_id in list(set(s_sas.keys()) & set(g_sas.keys())):
 
