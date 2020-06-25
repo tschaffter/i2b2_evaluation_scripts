@@ -237,8 +237,6 @@ class StandoffAnnotation(object):
         else:
             self.patient_id = None
 
-        print("Patient ID is", self.patient_id)
-
         if file_name is not None:
             with open(file_name, 'r') as handle:
                 self.parse_text_and_tags(handle.read())
