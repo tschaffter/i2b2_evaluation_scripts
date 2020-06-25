@@ -123,13 +123,8 @@ class TokenSequence(object):
 
         tokenizer = self.tokenizer if tokenizer is None else tokenizer
 
-        if hasattr(text, "__iter__"):
-            self.text = ''.join(t.to_string() for t in text)
-            self.tokens = text
-
-        else:
-            self.text = text
-            self.tokens = tokenizer(self.text, start=start)
+        self.text = text
+        self.tokens = tokenizer(self.text, start=start)
 
         # If start is 0 we assume we're parsing a whole document
         # and not a sub-string of tokens.
