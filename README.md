@@ -30,6 +30,42 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
+This command evaluates the performance of Philter's output on a clinical note
+from the 2014 i2b2 NLP De-id Challenge. Evaluating the peformance on multiple
+notes at once is possible by specifying directory paths instead of file paths.
+
+```console
+$ docker run \
+    --rm \
+    --network none \
+    -v $PWD/data:/data:ro \
+    tschaffter/i2b2-evaluate \
+        phi \
+        /data/philter_results/110-01.xml \
+        /data/testing-PHI-Gold-fixed/110-01.xml
+Report for Token:
+                         Measure                       Micro (Primary)
+---------------------------------------------------------------------------
+110-01                   Precision                     0.5909
+[19(13)22]               Recall                        0.6842
+                         F1                            0.6341
+---------------------------------------------------------------------------
+Report for Strict:
+                         Measure                       Micro (Primary)
+---------------------------------------------------------------------------
+110-01                   Precision                     0.5
+[9(5)10]                 Recall                        0.5556
+                         F1                            0.5263
+---------------------------------------------------------------------------
+Report for Relaxed:
+                         Measure                       Micro (Primary)
+---------------------------------------------------------------------------
+110-01                   Precision                     0.0
+[9(0)10]                 Recall                        0.0
+                         F1                            0.0
+...
+```
+
 ## Setup
 
 This script also requires the following Python packages:
