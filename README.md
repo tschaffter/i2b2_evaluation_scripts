@@ -46,7 +46,7 @@ $ docker run \
     --rm \
     --network none \
     -v $PWD/data:/data:ro \
-    tschaffter/i2b2-evaluate \
+    i2b2-evaluate \
         phi \
         /data/philter_results/110-01.xml \
         /data/testing-PHI-Gold-fixed/110-01.xml
