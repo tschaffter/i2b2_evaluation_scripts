@@ -13,10 +13,17 @@ https://github.com/kotfic/i2b2_evaluation_scripts/issues
 
 ## Running using Docker
 
-The script `evaluate.py` is available as a Docker tool.
+The script `evaluate.py` is available as a Docker tool. This command builds
+the tool.
 
 ```console
-$ docker run --rm --network none tschaffter/i2b2-evaluate
+docker build --tag i2b2-evaluate .
+```
+
+This command shows the help meny of the `evaluate.py`.
+
+```console
+$ docker run --rm --network none i2b2-evaluate
 usage: evaluate.py [-h] {phi,cr} ...
 
 To Write
@@ -39,10 +46,10 @@ $ docker run \
     --rm \
     --network none \
     -v $PWD/data:/data:ro \
-    tschaffter/i2b2-evaluate \
+    i2b2-evaluate \
         phi \
         /data/philter_results/110-01.xml \
-        /data/testing-PHI-Gold-fixed/110-01.xml
+        /data/gold/110-01.xml
 Report for Token:
                          Measure                       Micro (Primary)
 ---------------------------------------------------------------------------
