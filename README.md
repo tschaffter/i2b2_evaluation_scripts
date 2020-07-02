@@ -16,12 +16,14 @@ https://github.com/kotfic/i2b2_evaluation_scripts/issues
 
 ## Running using Docker
 
-The script `evaluate.py` is available as a Docker tool. This command builds
-the tool.
+The script `evaluate.py` is available as a Docker image called [tscshaffter/i2b2-evaluate](https://hub.docker.com/repository/docker/tschaffter/i2b2-evaluate). You can also build this image using the command:
 
 ```console
 docker build --tag i2b2-evaluate .
 ```
+
+where `i2b2-evaluate` is the name of the image. You can set this name to
+anything you want.
 
 This command shows the help meny of the `evaluate.py`.
 
