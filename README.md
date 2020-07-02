@@ -1,7 +1,7 @@
 # i2b2 2014 Evaluation Script
 
-![Python versions](https://img.shields.io/badge/Python-3.6%20%7C%203.7%20%7C%203.8-blue)
-[![Docker image](https://github.com/tschaffter/i2b2_evaluation_scripts/workflows/Publish%20Docker%20Image/badge.svg?branch=master)](https://hub.docker.com/repository/docker/tschaffter/i2b2-evaluate)
+![Python versions](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue)
+[![Docker image](https://github.com/tschaffter/i2b2_evaluation_scripts/workflows/docker/badge.svg?branch=master)](https://hub.docker.com/repository/docker/tschaffter/i2b2-evaluate)
 
 This script is distributed as a part of the i2b2 2014 Cardiac Risk and
 Protected Health Information (PHI) tasks.
