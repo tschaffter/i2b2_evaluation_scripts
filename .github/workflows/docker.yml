@@ -3,8 +3,9 @@ name: docker
 on:
   push:
     branches:
-    - master
-    - 'releases/**'
+      - master
+    tags:
+      - '*'
 
 jobs:
   publish-docker-image:
@@ -20,4 +21,3 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: tschaffter/i2b2-evaluate
         tag_with_ref: true
-        push: ${{ startsWith(github.ref, 'refs/heads/') }}
