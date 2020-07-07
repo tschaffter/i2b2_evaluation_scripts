@@ -23,12 +23,13 @@ docker build --tag i2b2-evaluate .
 ```
 
 where `i2b2-evaluate` is the name of the image. You can set this name to
-anything you want.
+anything you want. The commands given below as example use the official image
+`tschaffter/i2b2-evaluate`.
 
 This command shows the help meny of the `evaluate.py`.
 
 ```console
-$ docker run --rm --network none i2b2-evaluate
+$ docker run --rm --network none tschaffter/i2b2-evaluate
 usage: evaluate.py [-h] {phi,cr} ...
 
 To Write
@@ -51,7 +52,7 @@ $ docker run \
     --rm \
     --network none \
     -v $PWD/data:/data:ro \
-    i2b2-evaluate \
+    tschaffter/i2b2-evaluate \
         phi \
         /data/philter_results/110-01.xml \
         /data/gold/110-01.xml
